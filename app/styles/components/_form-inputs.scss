@@ -1,0 +1,97 @@
+// Form Inputs Component
+// ========================================
+
+
+// Variables
+$form-label-color:               $grey-dark;
+$form-label-margin:              $padding-echo;
+$form-label-weight:              500;
+
+$label-offset-margin:            25px;
+
+$form-input-background:          $white-light;
+$form-input-border:              1px solid $grey-base;
+$form-input-border-radius:       0;
+$form-input-color:               $black-base;
+$form-input-height:              45px;
+$form-input-margin:              $padding-echo 0 $padding-charlie;
+$form-input-padding:             10px;
+
+$form-input-background-active:   $white-base;
+$form-input-border-active:       1px solid $tan-dark;
+
+$form-input-background-inactive: $grey-light;
+$form-input-border-inactive:     1px solid $grey-base;
+
+// Structure
+
+// Labels
+label,
+.label {
+  @include rem(margin-bottom, $form-label-margin);
+  @include s-foxtrot;
+  color: $form-label-color;
+  font-weight: $form-label-weight;
+  display: inline-block;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.label--offset {
+  @include rem(margin-top, $label-offset-margin);
+}
+
+
+// Inputs
+#{$all-text-inputs},
+input,
+select {
+  @include appearance(none);
+  @include font-type($primary-sans-serif, normal, 400);
+  @include rem(height, $form-input-height);
+  @include rem(margin, $form-input-margin);
+  @include rem(padding, $form-input-padding);
+  @include s-foxtrot;
+  @include transition(border-color, 0.4s, ease);
+  background-color: $form-input-background;
+  border: $form-input-border;
+  border-radius: $form-input-border-radius;
+  color: $form-input-color;
+  width: 100%;
+
+  &:focus {
+    @include box-shadow(0 0 4px, rgba(0, 0, 0, 0.1));
+    background-color: $form-input-background-active;
+    border: $form-input-border-active;
+    outline: none;
+  }
+
+  &:active {
+    border: $form-input-border-active;
+    background-color: $form-input-background-active;
+  }
+
+  &:disabled {
+    background-color: $form-input-background-inactive;
+    border: $form-input-border-inactive;
+    color: $grey-dark;
+    cursor: not-allowed;
+  }
+}
+
+input[type="submit"] {
+  @include s-echo;
+  border: none;
+  width: auto;
+
+  &:hover { cursor: pointer; }
+}
+
+input[type="search"],
+.input--search {
+  background-image: url('../../images/icons/search-icon.svg');
+  background-position: 10px;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  padding-left: 30px !important;
+}

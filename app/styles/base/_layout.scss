@@ -1,0 +1,72 @@
+// Base Layout Stylesheet
+// ========================================
+
+// Variables
+$site-background:    $white-base;
+$site-padding:       $padding-charlie;
+
+
+// Global Styles
+html,
+body {
+  background-color: $site-background;
+
+  &.is-fixed {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+
+    @include media($tablet) {
+      @include position(absolute);
+    }
+  }
+}
+
+// Body Styles
+body {
+  overflow-x: hidden;
+}
+
+// Clears + Resets
+.clear { clear: both; }
+
+@each $reset in $resets {
+  $position:  nth($reset, 1);
+  $zero:      nth($reset, 2);
+
+  .reset-margin-#{$position} {
+    margin-#{$position}: $zero !important;
+  }
+
+  .reset-padding-#{$position} {
+    padding-#{$position}: $zero !important;
+  }
+};
+
+.reset-padding { padding: 0 !important; }
+.reset-margin  { margin:  0 !important; }
+
+
+// Spacers
+@each $spacer in $spacers {
+  $type:  nth($spacer, 1);
+  $value: nth($spacer, 2);
+
+  .margin__#{$type}-spacer-bottom { margin-bottom: $value; }
+  .margin__#{$type}-spacer-left   { margin-left:   $value; }
+  .margin__#{$type}-spacer-right  { margin-right:  $value; }
+  .margin__#{$type}-spacer-top    { margin-top:    $value; }
+
+  .margin__.#{$type} { margin:  $value }
+  .padding__#{$type} { padding: $value }
+}
+
+
+// Floats
+.float--left {
+  @include media($tablet) { float: left; }
+}
+
+.float--right {
+  @include media($tablet) { float: right; }
+}

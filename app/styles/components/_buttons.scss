@@ -1,0 +1,104 @@
+// Button Component
+// ========================================
+
+// Variables
+$button-border:                none;
+$button-display:               inline-block;
+$button-line-height:           normal;
+$button-padding:               20px 35px;
+$button-text-align:            center;
+$button-text-transform:        uppercase;
+$button-transition:            all 0.3s ease-in-out;
+
+$button-small-padding:         15px 20px;
+
+$button-input-height:          45px;
+$button-input-padding:         0 20px;
+
+$button-hover-cursor:          pointer;
+$button-hover-opacity:         1;
+
+$button-focus-border:          none;
+$button-focus-outline:         none;
+$button-focus-text-decoration: none;
+
+
+// Main Button
+.button,
+button {
+  @include font-type($primary-sans-serif, normal, 500);
+  @include s-echo;
+  @include rem(padding, $button-padding);
+  @include transition ($button-transition);
+  border: $button-border;
+  display: $button-display;
+  height: auto;
+  line-height: $button-line-height;
+  text-align: $button-text-align;
+  text-transform: $button-text-transform;
+  -webkit-appearance: none;
+
+  &:hover {
+    cursor: $button-hover-cursor;
+    opacity: $button-hover-opacity;
+  }
+
+  &:focus {
+    border: $button-focus-border;
+    outline: $button-focus-outline;
+    text-decoration: $button-focus-text-decoration;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+
+// Button Styles
+@each $button, $styles in $buttons {
+  $bg-color:  nth($styles, 1);
+  $color:     nth($styles, 2);
+
+  .button__#{$button} {
+    background: $bg-color;
+    color: $color;
+
+    &:hover {
+     opacity: 0.85;
+    }
+
+    &:focus {
+      @include box-shadow(0 0 0, transparent);
+      border: $button-focus-border;
+    }
+  }
+
+
+  // Links
+  .link--#{$button} {
+    @include font-type($primary-sans-serif, normal, 400);
+    @include transition(all 0.3s ease-in-out);
+    color: $bg-color;
+    font-style: inherit;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.6;
+    }
+  }
+}
+
+
+// Button Sizes
+.button--small {
+  @include rem(padding, $button-small-padding);
+}
+
+.button--full {
+  width: 100% !important;
+}
+
+.button--input-height {
+  @include rem(height, $button-input-height);
+  @include rem(padding, $button-input-padding);
+}

@@ -1,0 +1,102 @@
+// Base Typography
+// ========================================
+
+html{
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @include font-type($primary-sans-serif, normal, 400);
+  @include s-foxtrot;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-type($primary-sans-serif, normal, 500);
+  @include rem(margin-bottom, 18px);
+  color: $black-base;
+  line-height: 1.25;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 { font-size: $font-size-base * 4.25; }
+h2 { font-size: $font-size-base * 3.25; }
+h3 { font-size: $font-size-base * 2.75; }
+h4 { font-size: $font-size-base * 1.85; }
+h5 { font-size: $font-size-base * 1.45; }
+h6 { font-size: $font-size-base; }
+
+p {
+  @include font-type($primary-sans-serif, normal, 400);
+  @include s-foxtrot;
+  @include rem(margin-bottom, 12px);
+  color: $black-base;
+  line-height: $base-line-height;
+}
+
+li,
+dd{
+  @include s-foxtrot;
+  @include rem(margin-top, 3px);
+  line-height: normal;
+}
+
+a {
+  @include font-type(inherit, normal, 400);
+  @include transition(all 0.3s ease-in-out);
+  color: inherit;
+  text-decoration: none;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+blockquote{
+  @include font-type($primary-serif, italic, 300);
+  @include s-delta;
+  color: $grey-dark;
+  line-height: 40px;
+
+  @include media($tablet) { @include s-alpha; }
+}
+
+cite{
+  @include font-type($primary-sans-serif, normal, 700);
+  @include rem(margin-top, 15px);
+  @include s-foxtrot;
+  color: $grey-dark;
+  display: block;
+  text-transform: uppercase;
+}
+
+
+// Type Align
+.text__center { text-align: center; }
+
+// Type Colors
+@each $name, $tones in $type-colors {
+  $tone-color: nth($tones, 1);
+
+  .text__#{$name} {
+    color: $tone-color !important;
+  };
+}
+
+// Type Styles
+.uppercase{ text-transform: uppercase }
+.serif { @include font-type($primary-serif, italic, null); }
+
+// Type Weight
+strong,
+.heavy  { font-weight: 600 }

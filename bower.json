@@ -1,0 +1,21 @@
+{
+  "name": "weeklyroundup-frontend",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-resource": "~1.4.5",
+    "angular-sanitize": "~1.4.5",
+    "angular-ui-router": "~0.2.15",
+    "bourbon": "~4.2.4",
+    "modernizr": "~2.8.1",
+    "neat": "~1.7.2",
+    "angular-click-outside": "^2.4.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "resolutions": {
+    "angular": "~1.5.0"
+  }
+}

@@ -1,0 +1,177 @@
+// Page Layout Stylesheet
+// ========================================
+
+
+// Variables
+$page-header-padding:                $padding-alpha;
+
+$page-header-title-color:            $white-base;
+$page-header-title-font-weight:      500;
+$page-header-title-shadow:           rgba(0, 0, 0, 0.25);
+$page-header-title-spread:           0 1px 2px;
+
+$page-header-logo-dimensions:        50px;
+$page-header-logo-margin:            $padding-echo;
+$page-header-logo-padding:           $padding-echo;
+
+$page-header-tab-background:         $blue-alt;
+$page-header-tab-border-radius:      2px;
+$page-header-tab-margin:             $padding-echo;
+$page-header-tab-width:              200px;
+
+$page-header-tab-background-active:  $white-dark;
+$page-header-tab-color-active:       $black-base;
+
+$page-header-tab-link-padding:       $padding-delta;
+$page-header-tab-link-width:         100%;
+
+$page-section-padding:               $padding-charlie;
+
+$page-section-background-grey:       $white-dark;
+$page-section-border-grey:           1px solid $grey-light;
+
+$page-section-header-margin:         $padding-echo;
+
+$page-section-title-border:          1px solid $grey-base;
+$page-section-title-padding:         $padding-delta;
+$page-section-title-color:           $grey-dark;
+$page-section-title-weight:          500;
+
+$page-sidebar-link-color:            $grey-dark;
+$page-sidebar-link-padding:          $padding-echo 8px;
+
+$page-sidebar-link-bg-active:        $grey-light;
+$page-sidebar-link-border-active:    1px solid $grey-base;
+$page-sidebar-link-radius-active:    1px;
+
+
+// Page Header
+.page__header {
+  @include linear-gradient(-180deg, $blue-base 5%, $blue-dark 100%);
+  @include rem(padding, $page-section-padding ($page-section-padding/2) 0);
+  overflow: hidden;
+
+  @include media($tablet-landscape) {
+    @include rem(padding, $page-section-padding 0 0);
+  }
+
+  .page__header-title {
+    @include text-shadow($page-header-title-spread, $page-header-title-shadow);
+    color: $page-header-title-color;
+    font-weight: $page-header-title-font-weight;
+  }
+
+  .page__header-logo {
+    @include box-shadow($page-header-title-spread, $page-header-title-shadow);
+    @include rem(height, $page-header-logo-dimensions);
+    @include rem(margin-right, $page-header-logo-margin);
+    @include rem(padding, $page-header-logo-padding);
+    @include rem(width, $page-header-logo-dimensions);
+    background-color: $white-base;
+    border-radius: 30em;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+  }
+}
+
+.page__header-tabs {
+  white-space: nowrap;
+  overflow: scroll;
+  width: 100%;
+
+  .tab {
+    @include rem(margin-right, $page-header-tab-margin);
+    @include rem(width, $page-header-tab-width);
+    background-color: $page-header-tab-background;
+    border-top-left-radius: $page-header-tab-border-radius;
+    border-top-right-radius: $page-header-tab-border-radius;
+    color: $white-base;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include media($tablet) {
+    }
+
+    &.is-active {
+      background-color: $page-header-tab-background-active;
+      color: $page-header-tab-color-active;
+
+      .tab__link {
+        @include text-shadow(0 0 0, transparent);
+      }
+    }
+
+    &.is-active.alt-color {
+      background-color: $white-base;
+    }
+  }
+
+  .tab__link {
+    @include text-shadow(0 1px 2px, rgba(0, 0, 0, 0.15));
+    @include rem(padding, $page-header-tab-link-padding);
+    display: inline-block;
+    font-weight: 500;
+    width: $page-header-tab-link-width;
+  }
+}
+
+
+// Page Section
+.page__section {
+  @include rem(padding, $page-section-padding ($page-section-padding/2));
+
+  @include media($tablet-landscape) {
+    @include rem(padding, $page-section-padding 0 0);
+  }
+
+  &.page__section--grey {
+    background-color: $page-section-background-grey;
+    border-bottom: $page-section-border-grey;
+  }
+
+  .page__section-input {
+    margin-bottom: 0;
+    @include media($tablet) { margin-bottom: $padding-charlie; }
+  }
+}
+
+.page__section-header {
+  @include rem(margin-bottom, $page-section-header-margin);
+}
+
+.page__section-title {
+  @include rem(padding-bottom, $page-section-title-padding);
+  color: $page-section-title-color;
+  border-bottom: $page-section-title-border;
+  font-weight: $page-section-title-weight;
+  text-transform: uppercase;
+}
+
+// Page Section Sidebar
+.page__section-sidebar-navigation {
+  @include clearfix;
+  @include rem(margin-bottom, $padding-charlie);
+  text-align: center;
+
+  @include media($tablet) {
+    text-align: left;
+  }
+}
+
+.page__section-sidebar-item {
+}
+
+.page__section-sidebar-link {
+  @include rem(padding, $page-sidebar-link-padding);
+  color: $page-sidebar-link-color;
+  display: block;
+  font-weight: 500;
+
+  &.is-active {
+    background-color: $page-sidebar-link-bg-active;
+    border: $page-sidebar-link-border-active;
+    border-radius: $page-sidebar-link-radius-active;
+  }
+}

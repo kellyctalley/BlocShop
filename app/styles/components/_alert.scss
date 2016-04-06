@@ -1,0 +1,47 @@
+// Alerts Component
+// ========================================
+
+// Variables
+$alert-animation:       fade-in 0.8s ease;
+$alert-margin:          0 auto;
+$alert-padding:         15px;
+$alert-position:        0 0 null 0;
+$alert-shadow-color:    rgba(0, 0, 0, 0.25);
+$alert-shadow-spread:   5px 0 10px;
+
+// Structure
+@each $alert in $alerts {
+  $name:     nth($alert, 1);
+  $color-1:  nth($alert, 2);
+  $color-2:  nth($alert, 3);
+
+  .alert.#{$name} {
+    @include animation($alert-animation);
+    @include box-shadow($alert-shadow-spread, $alert-shadow-color);
+    @include font-type($primary-sans-serif, normal, 600);
+    @include position(fixed, $alert-position);
+    @include rem(margin, $alert-margin);
+    @include rem(padding, $alert-padding);
+    background: $color-1;
+    color: $white-base;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 9997;
+
+    #app-icon{ fill: darken($color-1, 10%); }
+
+    .close {
+      color: $color-2;
+      font-weight: bold;
+      font-size: 22px;
+      top: -2px
+    }
+  }
+
+  .alert__close--icon {
+    @include position(absolute, 5px 5px null null);
+  }
+
+};

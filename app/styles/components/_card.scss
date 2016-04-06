@@ -1,0 +1,83 @@
+// Card Component
+// ========================================
+
+// Variables
+$card-background:           $white-base;
+$card-border:               1px solid $tan-dark;
+$card-border-radius:        1px;
+$card-margin:               $padding-delta;
+$card-padding:              $padding-delta;
+$card-shadow:               rgba(0, 0, 0, 0.1);
+$card-spread:               0 0 10px;
+
+$card-section-margin:       0 $padding-barvo 0 $padding-delta;
+
+$card-avatar-border-radius: 30em;
+$card-avatar-dimensions:    50px;
+$card-avatar-padding:       $padding-echo;
+
+$card-title-margin:         $padding-echo;
+
+
+// Structure
+.card {
+  @include box-shadow($card-spread, $card-shadow);
+  @include clearfix;
+  @include position(relative);
+  @include rem(margin-bottom, $card-margin);
+  @include rem(padding, $card-padding);
+  background-color: $card-background;
+  border: $card-border;
+  border-radius: $card-border-radius;
+}
+
+.card__header {
+  @include rem(margin-bottom, $card-margin);
+  border-bottom: $card-border;
+
+  .title { @include rem(margin-bottom, $card-margin); }
+}
+
+// Features
+.card__section {
+
+  .card__section-title {
+    @include rem(margin-top, $card-title-margin);
+    margin-bottom: 0;
+  }
+
+  .card__section-text {
+    @include s-golf;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+}
+
+.card__logo {
+  @include rem(height, $card-avatar-dimensions);
+  @include rem(width, $card-avatar-dimensions);
+  border: $card-border;
+  border-radius: $card-avatar-border-radius;
+  float: left;
+  overflow: hidden;
+
+  .logo {
+    @include rem(padding, $card-avatar-padding);
+    width: 100%;
+  }
+}
+
+
+// Card actions
+.card__actions {
+  float: right;
+}
+
+.card__action {
+  display: inline-block;
+  vertical-align: middle;
+
+  .label-switch {
+    @include rem(margin-top, $padding-echo * 2);
+  }
+}
