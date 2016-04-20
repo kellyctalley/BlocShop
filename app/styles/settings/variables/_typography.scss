@@ -2,49 +2,5 @@
 // ========================================
 
   // Font Families
-  $primary-sans-serif: "futura-pt", "Helvetica", sans-serif;
-  $primary-serif: "ff-tisa-web-pro", "Georgia", serif;
-
-  // Sizes
-  $font-size-base: 15px;
-
-  $s-giga:    75px;
-  $s-mega:    50px;
-
-  $s-alpha:   33px;
-  $s-bravo:   28px;
-  $s-charlie: 22px;
-  $s-delta:   18px;
-  $s-echo:    16px;
-  $s-foxtrot: $font-size-base;
-  $s-golf:    13px;
-  $s-hotel:   11px;
-
-  // Line Heights
-  $base-line-height: $font-size-base * 1.5;
-  $base-line-small:  $font-size-base;
-
-  // Type Colors Map
-  $type-colors: (
-    'blue': (
-      $blue-base
-    ),
-    'green': (
-      $green-base
-    ),
-    'grey': (
-      $grey-dark
-    ),
-    'grey-alt': (
-      $grey-alt
-    ),
-    'grey-base': (
-      $grey-base
-    ),
-    'red': (
-      $red-base
-    ),
-    'white': (
-      $white-base
-    )
-  );
+  $main-sans-serif: "Cabin", Helvetica, Arial, sans-serif;
+  $main-serif: "Flamenco", Helvetica, Arial, sans-serif;

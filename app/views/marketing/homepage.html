@@ -1,0 +1,18 @@
+<style>
+  .text-green {
+    color: green;
+  }
+
+  .text-red {
+    color: red !important;
+  }
+</style>
+
+
+<h1 
+class="text-green"
+ng-class="{'text-red' : $ctrl.classIsActive}">Homepage</h1>
+
+<a ui-sref="base.contact">Contact Us</a>
+
+<button ng-click="$ctrl.clickToggleClass()">Change Color</button>

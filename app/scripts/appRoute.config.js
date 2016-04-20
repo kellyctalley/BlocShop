@@ -6,14 +6,19 @@
   function AppRouteConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
     // Default URL client/index page.
     $urlRouterProvider.when('', '/');
-    $urlRouterProvider.otherwise('/client', '/client');
 
     $stateProvider
       .state('base', {
         url: '/',
         views: {
+          'topbar@': {
+            templateUrl: 'views/layouts/shared/topbar.html'
+          },
           'main@': {
             templateUrl: 'views/layouts/base.html'
+          },
+          'footer@': {
+            templateUrl: 'views/layouts/shared/footer.html'
           }
         }
       });

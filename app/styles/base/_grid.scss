@@ -1,54 +1,67 @@
 // Grid Stylesheet
 // ========================================
+.container {
+   margin-right: auto;
+   margin-left: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+   position: relative;
+}
 
-// Structure
-.container { @include outer-container }
+.container:before,
+.container:after {
+   content: " ";
+   display: table;
+}
 
-.row { @include row }
+.container:after {
+   clear: both;
+}
 
-@each $column in $columns {
-  $column-name:   nth($column, 1);
-  $column-count:  nth($column, 2);
+.one-half, .one-third, .one-fourth {
+   width:96%;
+   float:left;
+   position:relative;
+   min-height: 1px;
+   margin:0 2% 20px;
+}
 
-  // Columns
-  .#{$column-name}-columns__s {
-    // Refactor to take a more mobile-first approach
-    @media only screen and (max-width: 45em) {
-      @include span-columns($column-count of 12);
-    }
+/* media queries */
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
   }
 
-  .#{$column-name}-columns__m {
-    @include media($tablet) {
-      @include span-columns($column-count of 12);
-    }
+  .one-half {
+    width:46%;
   }
 
-  .#{$column-name}-columns__l {
-    @include media($tablet-landscape) {
-      @include span-columns($column-count of 12);
-    }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+  
+  .one-third {
+    width:29.33333%;
+  }
+  
+  .one-fourth {
+    width:21%;
   }
 
+}
 
-  // Columns Offset
-  .#{$column-name}-offset__s {
-    // Refactor to take a more mobile-first approach
-    @media only screen and (max-width: 45em) {
-      @include shift($column-count of 12);
-    }
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
   }
+}
 
-  .#{$column-name}-offset__m {
-    @include media($tablet) {
-      @include shift($column-count of 12);
-    }
+@media (min-width: 2000px) {
+  .container {
+    width: 1920px;
   }
-
-  .#{$column-name}-offset__l {
-    @include media($tablet-landscape) {
-      @include shift($column-count of 12);
-    }
-  }
-
 }

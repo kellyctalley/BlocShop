@@ -1,0 +1,16 @@
+.main-shop-header {
+  height: 400px;
+  background: linear-gradient(rgba(91, 91, 91, 0.75), rgba(91, 91, 91, 0.75)), url('/images/shop/cb-mushrooms.jpg') center center;
+  position: relative;
+  background-attachment: fixed;
+  margin-bottom: 40px;
+
+  h1 {
+    color: $white;
+    font-size: 4em;
+    font-weight: 300;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+  }
+}

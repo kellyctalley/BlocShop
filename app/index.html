@@ -7,28 +7,32 @@
     <title>BlocShop</title>
 
     <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
     <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Cabin:400,400italic,700|Flamenco:400,300' rel='stylesheet' type='text/css'>
 
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
   <body>
+    <header ui-view="topbar"></header>
     <main role="main" ui-view="main">
       <!-- Content -->
     </main>
+    <footer ui-view="footer"></footer>
+    
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-      <script src="../bower_components/modernizr/modernizr.js"></script>
-      <script src="../bower_components/angular/angular.js"></script>
-      <script src="../bower_components/angular-resource/angular-resource.js"></script>
-      <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
-      <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-      <script src="../bower_components/angular-click-outside/clickoutside.directive.js"></script>
-      <script src="../bower_components/angular-cookie/angular-cookie.js"></script>
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-click-outside/clickoutside.directive.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -38,6 +42,10 @@
       <script src="scripts/app.module.js"></script>
       <script src="scripts/appRoute.config.js"></script>
       <script src="scripts/app.controller.js"></script>
+
+      <!-- Marketing -->
+      <script src="scripts/marketing/marketingRoute.config.js"></script>
+      <script src="scripts/marketing/marketingHomepage.directive.js"></script>
 
     <!-- endbuild -->
   </body>

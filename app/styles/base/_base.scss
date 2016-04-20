@@ -2,7 +2,91 @@
 // ========================================
 
 @import "grid";
-@import "layout";
-@import "page";
-@import "typography";
-@import "visibility";
+@import "shop";
+
+html, body {
+   overflow-x: hidden;
+}
+
+body {
+   font-family: $main-sans-serif;
+   background: url("/images/main/ricepaper2.png") repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-family: $main-serif;
+}
+
+p {
+   font-size:16px;
+   line-height: 19px;
+}
+
+a {
+  text-decoration: none;
+}
+
+header, footer {
+  background-color: $dark-blue;
+}
+
+header nav {
+  padding:1em 0;
+}
+
+header nav ul {
+  display:inline;
+  text-align: right;
+  float:right;
+  margin:0;
+}
+
+header nav ul > li {
+  list-style-type: none;
+  display: inline-block;
+  margin:0 15px;
+}
+
+.nav-list {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 30px;
+}
+
+.nav-list a {
+  color: $white;
+}
+
+.main-footer {
+  margin-top: 40px;
+  padding: 25px 0;
+}
+
+.footer-contact {
+    text-align: center;
+  }
+
+.social-icons {
+  padding-left:0;
+  margin-left:-5px;
+  list-style:none;
+}
+
+.social-icons>li {
+  display:inline-block;
+  padding-right:5px;
+  padding-left:5px;
+}
+
+.btn-social {
+    margin-top: 15px;
+    font-size: 24px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: $white;
+    color: $dark-blue;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 45px;
+}

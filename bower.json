@@ -1,5 +1,5 @@
 {
-  "name": "weeklyroundup-frontend",
+  "name": "Blocshop",
   "private": true,
   "dependencies": {
     "angular": "~1.5.0",
