@@ -3,8 +3,6 @@
 .container {
    margin-right: auto;
    margin-left: auto;
-   padding-left: 15px;
-   padding-right: 15px;
    position: relative;
 }
 
@@ -23,7 +21,6 @@
    float:left;
    position:relative;
    min-height: 1px;
-   margin:0 2% 20px;
 }
 
 /* media queries */
@@ -45,11 +42,13 @@
   }
   
   .one-third {
-    width:29.33333%;
+    width:25%;
+    margin-right: 1.25%;
   }
   
   .one-fourth {
-    width:21%;
+    width:18%;
+    margin-right: 1.25%;
   }
 
 }

@@ -14,3 +14,13 @@
     left: 40px;
   }
 }
+
+.product-border {
+  background-color: $light-blue;
+  padding: 7px;
+  border-radius: 6px;
+
+  img {
+    width: 100%;
+  }
+}
