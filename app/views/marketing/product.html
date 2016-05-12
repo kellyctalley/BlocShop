@@ -1,0 +1,42 @@
+
+  <div class="container">
+        
+        <section class="category-links">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#">Home</a> / <a href="#">{{$ctrl.product[0].category}}</a> / <a href="#">{{$ctrl.product[0].subcategory}}</a>
+            </div>
+        </div>
+    </section>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="product-border">
+                    <img ng-src="{{$ctrl.product[0].photo1}}" class="product-image img-responsive" alt="{{$ctrl.product[0].title}}">
+                </div>
+                <ul class="product-thumbs">
+                    <li><img ng-src="{{$ctrl.product[0].photo1}}" class="product-thumbnail"></li>
+                    <li><img ng-src="{{$ctrl.product[0].photo2}}" class="product-thumbnail"></li>
+                    <li><img ng-src="{{$ctrl.product[0].photo3}}" class="product-thumbnail"></li>
+                    <li><img ng-src="{{$ctrl.product[0].photo4}}" class="product-thumbnail"></li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h3 class="product-title">{{$ctrl.product[0].title}}</h3>
+                <h4 class="product-price">{{$ctrl.product[0].price | currency:"$"}}</h4>
+                <hr class="divider">
+                <p class="product-description">{{$ctrl.product[0].description}}</p>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Dolor Sit Amet</li>
+                    <li>Consectetur</li>
+                    <li>Adipiscing Elit</li>
+                </ul>
+                <p class="red-text">Each item is handmade and unique. Only one available!</p>
+            </div>
+
+        </div>
+      </div>
+        <!-- /.row -->

@@ -57,6 +57,27 @@ header nav ul > li {
   color: $white;
 }
 
+.dropdown-trigger {
+  
+  & + .dropdown-menu {
+    background: #FFF;
+    display: none; 
+    height: 100px; 
+    position: absolute;
+    text-align: left; 
+    width: 100px; 
+    z-index: 99999;
+  }
+
+  &.is-active {
+
+    + .dropdown-menu {
+      display: block;
+    }  
+  }
+}
+
+
 .main-footer {
   margin-top: 40px;
   padding: 25px 0;

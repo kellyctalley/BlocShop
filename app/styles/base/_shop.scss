@@ -1,8 +1,7 @@
 .main-shop-header {
   height: 400px;
-  background: linear-gradient(rgba(91, 91, 91, 0.75), rgba(91, 91, 91, 0.75)), url('/images/shop/cb-mushrooms.jpg') center center;
+  background: linear-gradient(rgba(91, 91, 91, 0.75), rgba(91, 91, 91, 0.75)), url('/images/shop/cb-mushrooms.jpg') no-repeat center center;
   position: relative;
-  background-attachment: fixed;
   margin-bottom: 40px;
 
   h1 {
@@ -15,12 +14,45 @@
   }
 }
 
+.product-wrapper {
+  text-align: center;
+}
+
 .product-border {
   background-color: $light-blue;
   padding: 7px;
   border-radius: 6px;
+  margin-bottom: 10px;
 
   img {
     width: 100%;
   }
+}
+
+.category-links {
+  margin: 40px 0;
+  font-size: 20px;
+}
+
+.product-thumbs li {
+  display: inline;
+}
+.product-thumbnail {
+  width: 75px;
+}
+
+.product-title {
+  font-size: 36px;
+}
+
+.product-price {
+  font-family: $main-sans-serif;
+  font-size: 30px;
+  line-height: 1.75em;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: $dark-blue;
 }

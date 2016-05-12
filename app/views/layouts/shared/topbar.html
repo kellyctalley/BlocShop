@@ -4,11 +4,26 @@
     </div><!--.ck-logo-->
     <div class="one-half nav-list">
       <ul>
+        <li>
+          <a href="#" class="dropdown-trigger" toggle-class="is-active">Hello World</a>
+          <bs-dropdown-menu title="Hello World">
+            <div class="dropdown-menu__container">
+              Hello World dropdown
+            </div>
+          </bs-dropdown-menu>
+        </li>
         <li><a ui-sref="base">Home</a></li>
         <li><a ui-sref="base.main-shop">Shop</a></li>
         <li><a ui-sref="base.main-blog">Blog</a></li>
         <li><a ui-sref="base.main-about">About</a></li>
-        <li><a ui-sref="base.main-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> (0)</a></li>
+        <li>
+          <a ui-sref="base.main-cart" class="dropdown-trigger" toggle-class="is-active"><i class="fa fa-shopping-cart" aria-hidden="true"></i> (0)</a>
+          <bs-dropdown-menu title="cart">
+            <div class="dropdown-menu__container">
+              cart dropdown
+            </div>
+          </bs-dropdown-menu>
+        </li>
       </ul>
     </div><!--nav-list-->
   </nav>

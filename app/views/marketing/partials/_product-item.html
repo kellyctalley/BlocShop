@@ -1,0 +1,10 @@
+<li
+  class="col-md-4 product-wrapper" 
+  ng-repeat="product in $ctrl.products">
+    <div class="product-border">
+      <img ng-src="{{product.photo1}}" class="product-image">
+    </div>
+    <p class="item-title">{{product.title}}</p>
+    <p class="item-price">{{product.price |  currency:"$"}}</p>
+    <a ui-sref="base.product({id: product.id})">View Details</a>
+</li>

@@ -21,6 +21,13 @@
           templateUrl: 'views/marketing/main-shop.html'
         }
       }
+    }).state('base.product', {
+      url: 'product/:id',
+      views: {
+        'view': {
+          template: '<bs-marketing-product></bs-marketing-product>'
+        }
+      }
     }).state('base.product1', {
       url: 'product1',
       views: {
