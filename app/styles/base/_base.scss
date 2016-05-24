@@ -8,9 +8,23 @@ html, body {
    overflow-x: hidden;
 }
 
+html {
+  background: url("/images/main/ricepaper2.png") repeat;
+}
+
 body {
    font-family: $main-sans-serif;
-   background: url("/images/main/ricepaper2.png") repeat;
+   background: url("/images/main/paint-dab.png") no-repeat;
+   background-attachment: fixed;
+}
+
+.page-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+html, html a {
+    -webkit-font-smoothing: antialiased !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,19 +33,27 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
    font-size:16px;
-   line-height: 19px;
+   line-height: 1.5em;
 }
 
 a {
   text-decoration: none;
 }
 
-header, footer {
-  background-color: $dark-blue;
+footer {
+  background-color: $light-blue;
+  border-top: 1px solid $dark-brown;
 }
 
+header {
+  margin-bottom: 30px;
+}
+
+
+
 header nav {
-  padding:1em 0;
+  padding: 20px 0;
+  border-bottom: 1px solid $dark-brown;
 }
 
 header nav ul {
@@ -54,7 +76,7 @@ header nav ul > li {
 }
 
 .nav-list a {
-  color: $white;
+  color: $dark-brown;
 }
 
 .dropdown-trigger {
@@ -77,15 +99,62 @@ header nav ul > li {
   }
 }
 
+.home-img {
+  position: relative;
 
-.main-footer {
-  margin-top: 40px;
-  padding: 25px 0;
+  h1 {
+    color: $white;
+    font-size: 5em;
+    font-weight: 400;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+  }
 }
 
-.footer-contact {
-    text-align: center;
+.home-row {
+  margin-bottom: 30px;
+}
+
+.site-links {
+  padding: 40px 0 30px;
+  border-bottom: 1px solid $dark-brown;
+}
+
+.about-section {
+  padding: 50px 0;
+
+  h4 {
+    font-size: 2.5em;
   }
+}
+
+.row-img-box {
+  position: relative;
+
+  h3 {
+    color: $white;
+    font-size: 3em;
+    font-weight: 400;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+  }
+}
+
+.row-img {
+  width: 100%;
+}
+
+.main-footer {
+  margin-top: 20px;
+  padding: 15px 0;
+}
+
+.footer-contact, .footer-text {
+  text-align: center;
+  padding: 15px 0;
+}
 
 .social-icons {
   padding-left:0;

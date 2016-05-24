@@ -2,9 +2,10 @@
   class="col-md-4 product-wrapper" 
   ng-repeat="product in $ctrl.products">
     <div class="product-border">
-      <img ng-src="{{product.photo1}}" class="product-image">
+      <a ui-sref="base.product({id: product.id})"><img ng-src="{{product.photo1}}" class="product-image"></a>
     </div>
-    <p class="item-title">{{product.title}}</p>
-    <p class="item-price">{{product.price |  currency:"$"}}</p>
-    <a ui-sref="base.product({id: product.id})">View Details</a>
+    <div class="item-info">
+      <a ui-sref="base.product({id: product.id})"><p class="item-title">{{product.title}}</p></a>
+      <p class="item-price">{{product.price |  currency:"$"}}</p>
+    </div>
 </li>
